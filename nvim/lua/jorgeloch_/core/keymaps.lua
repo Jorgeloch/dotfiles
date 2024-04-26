@@ -4,10 +4,8 @@ local keymap = vim.keymap
 
 keymap.set("n", "<leader>t", "<cmd>TransparentToggle<cr>")
 
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-k>", "<C-w>k")
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-l>", "<C-w>l")
+keymap.set("n", "<leader>s-", "<cmd>split<cr>")
+keymap.set("n", "<leader>s\\", "<cmd>vsplit<cr>")
 
 keymap.set("n", "<S-h>", "<cmd>bprevious<cr>")
 keymap.set("n", "<S-l>", "<cmd>bnext<cr>")
