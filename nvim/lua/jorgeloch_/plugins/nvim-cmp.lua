@@ -33,6 +33,11 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{
+					name = "copilot",
+					group_index = 1,
+					priority = 100,
+				},
 			}),
 			experimental = {
 				ghost_text = true,
