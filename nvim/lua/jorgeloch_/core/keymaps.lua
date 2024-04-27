@@ -32,3 +32,5 @@ keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv")
 keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv")
 
 keymap.set("n", "<leader>mkp", "<cmd>MarkdownPreview<cr>")
+
+keymap.set("n", "<leader>df", "<cmd>Git diff<cr>")
