@@ -29,15 +29,11 @@ return {
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
-				{
-					name = "copilot",
-					group_index = 1,
-					priority = 100,
-				},
+				{ name = "nvim_lsp", group_index = 2 },
+				{ name = "luasnip", group_index = 2 },
+				{ name = "buffer", group_index = 2 },
+				{ name = "path", group_index = 2 },
+				{ name = "copilot", group_index = 1 },
 			}),
 			experimental = {
 				ghost_text = true,
