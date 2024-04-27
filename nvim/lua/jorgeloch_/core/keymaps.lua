@@ -31,5 +31,4 @@ keymap.set("n", "<leader>D", "_D")
 keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv")
 keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv")
 
-keymap.set("n", "<C-t>", "<cmd>Tp<cr>")
-keymap.set("n", "<leader>mkp", "<cmd>MarkdownPreviewToggle<cr>")
+keymap.set("n", "<leader>mkp", "<cmd>MarkdownPreview<cr>")
