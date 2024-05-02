@@ -7,29 +7,36 @@ return {
 		lualine.setup({
 			options = {
 				theme = theme,
+				section_separators = "",
+				component_separators = "",
+				globalstatus = true,
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = {
+				lualine_b = { "branch" },
+				lualine_c = {
 					{
-						"buffers",
-						filetype_names = {
-							TelescopePrompt = " Finder",
-							packer = "Packages",
-							NvimTree = " Explorer",
-							toggleterm = "Terminal",
-						},
-						symbols = {
-							modified = " ",
-							alternate_file = "",
-							directory = "",
-						},
+						"diff",
+						colored = true,
+						symbols = { added = "+", modified = "~", removed = "-" },
 					},
 				},
-				lualine_c = { "" },
-				lualine_x = { "diff", "branch" },
-				lualine_y = { "location" },
-				lualine_z = { "progress" },
+				lualine_x = {
+					{
+						"diagnostics",
+						sources = { "nvim_diagnostic" },
+						sections = { "error", "warn", "info", "hint" },
+						diagnostics_color = {
+							error = "DiagnosticError",
+							warn = "DiagnosticWarn",
+							info = "DiagnosticInfo",
+							hint = "DiagnosticHint",
+						},
+						colored = true,
+					},
+				},
+				lualine_y = { "filetype" },
+				lualine_z = { "location" },
 			},
 		})
 	end,
