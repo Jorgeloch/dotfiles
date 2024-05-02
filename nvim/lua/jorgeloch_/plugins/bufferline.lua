@@ -6,6 +6,18 @@ return {
 		local bufferline = require("bufferline")
 		bufferline.setup({
 			options = {
+				indicator = {
+					icon = "▎",
+					style = "icon",
+				},
+				offsets = {
+					{
+						filetype = "NvimTree",
+						text = "File Explorer",
+						text_align = "center",
+						separator = true,
+					},
+				},
 				diagnostics = "nvim_lsp",
 				diagnostics_indicator = function(count, level, diagnostics_dict, context)
 					if context.buffer:current() then
