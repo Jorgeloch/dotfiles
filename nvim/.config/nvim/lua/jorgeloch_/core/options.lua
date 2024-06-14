@@ -31,7 +31,6 @@ opt.cursorline = true
 
 -- appearence
 opt.termguicolors = true
-opt.background = "dark"
 opt.signcolumn = "yes"
 
 -- backspace
@@ -46,7 +45,6 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 opt.guicursor = ""
-opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.scrolloff = 8
 
