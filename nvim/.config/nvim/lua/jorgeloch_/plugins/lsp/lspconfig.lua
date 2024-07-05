@@ -59,10 +59,21 @@ return {
 
 		mason.setup_handlers({
 			function(server_name)
-				lspconfig[server_name].setup({
-					on_attach = on_attach,
-					capabilities = capabilities,
-				})
+				if server_name == "clangd" then
+					lspconfig[server_name].setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+						cmd = {
+							"clangd",
+							"--offset-encoding=utf-16",
+						},
+					})
+				else
+					lspconfig[server_name].setup({
+						on_attach = on_attach,
+						capabilities = capabilities,
+					})
+				end
 			end,
 		})
 	end,
