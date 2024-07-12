@@ -29,5 +29,6 @@ return {
 	},
 	config = function()
 		vim.cmd.colorscheme("catppuccin")
+		vim.o.background = "dark"
 	end,
 }

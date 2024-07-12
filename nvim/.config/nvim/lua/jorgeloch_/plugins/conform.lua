@@ -16,24 +16,28 @@ return {
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				graphql = { "prettier" },
-				c = { "clang-format" },
-				cpp = { "clang-format" },
 				lua = { "stylua" },
 				go = { "goimpors", "gofmt" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 5000,
-			},
+			format_on_save = function(bufnr)
+				-- Disable autoformat on certain filetypes
+				local ignore_filetypes = { "c", "cpp", "h" }
+				if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+					return
+				end
+				return {
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 5000,
+				}
+			end,
+			vim.keymap.set({ "n", "v" }, "<leader>fmt", function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 5000,
+				})
+			end),
 		})
-
-		vim.keymap.set({ "n", "v" }, "<leader>fmt", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 5000,
-			})
-		end)
 	end,
 }

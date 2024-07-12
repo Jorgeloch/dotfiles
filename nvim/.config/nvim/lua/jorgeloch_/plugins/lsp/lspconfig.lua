@@ -67,6 +67,7 @@ return {
 							"clangd",
 							"--offset-encoding=utf-16",
 						},
+						autoformat = false,
 					})
 				else
 					lspconfig[server_name].setup({
